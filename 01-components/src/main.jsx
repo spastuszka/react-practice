@@ -1,10 +1,41 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import ReactDom from 'react-dom/client'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+function LinkComponent(props) {
+  return (
+    <a href={props.href} target="_blank" rel="noopener noreferrer">
+      {props.children}
+    </a>
+  )
+}
+
+function DescriptionComponent(props) {
+  return <p>{props.children}</p>
+}
+
+const element = (
+  <div>
+    <h1>Nasza strona</h1>
+    <main>
+      <LinkComponent href="http://zrozumreact.pl">Strona testowa</LinkComponent>
+      <DescriptionComponent>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex ad
+        minima vitae perferendis laboriosam animi aliquid eius alias iste rerum,
+        aut, cum fugit! Odit obcaecati accusantium maxime iure quo.
+      </DescriptionComponent>
+      <LinkComponent href="http://zrozumreact.pl">Strona testowa</LinkComponent>
+      <DescriptionComponent>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex ad
+        minima vitae perferendis laboriosam animi aliquid eius alias iste rerum,
+        aut, cum fugit! Odit obcaecati accusantium maxime iure quo.
+      </DescriptionComponent>
+      <LinkComponent href="http://zrozumreact.pl">Strona testowa</LinkComponent>
+      <DescriptionComponent>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex ad
+        minima vitae perferendis laboriosam animi aliquid eius alias iste rerum,
+        aut, cum fugit! Odit obcaecati accusantium maxime iure quo.
+      </DescriptionComponent>
+    </main>
+  </div>
 )
+
+ReactDom.createRoot(document.getElementById('root')).render(element)
