@@ -1,16 +1,6 @@
 import ReactDom from 'react-dom/client'
-
-function LinkComponent(props) {
-  return (
-    <a href={props.href} target="_blank" rel="noopener noreferrer">
-      {props.children}
-    </a>
-  )
-}
-
-function DescriptionComponent(props) {
-  return <p>{props.children}</p>
-}
+import { LinkComponent } from './components/LinkComponent.jsx'
+import { DescriptionComponent } from './components/DescriptionComponent.jsx'
 
 const element = (
   <div>
