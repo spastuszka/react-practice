@@ -1,11 +1,18 @@
-import React from 'react'
+import { useState } from 'react'
 import { Button } from './components/Button.jsx'
 function App() {
+  const [secretShown, setSecretShown] = useState(false)
+
+  function handleClick() {
+    setSecretShown(true)
+  }
+
   return (
     <>
       <h1>Render Events Example</h1>
-      <p>Click the button to see the event in action.</p>
-      <Button onClick={() => alert('Button clicked!')}>Click Me</Button>
+      <p>Click to show useState in action.</p>
+      <Button onClick={handleClick}>Show me a secret</Button>
+      {secretShown && <div> Secret info</div>}
     </>
   )
 }
